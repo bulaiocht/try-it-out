@@ -1,0 +1,15 @@
+apply from: 'dependencies.gradle'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+group 'com.intellias'
+version '1.0-SNAPSHOT'
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
