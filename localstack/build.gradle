@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.3.3.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+}
+
+group 'com.intellias'
+version '1.0-SNAPSHOT'
+
+def globalConfig = rootProject.ext
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.postgresql:postgresql:42.2.16'
+    implementation 'org.projectlombok:lombok:1.18.12'
+    annotationProcessor 'org.projectlombok:lombok:1.18.12'
+
+    implementation group: 'com.amazonaws', name: 'aws-java-sdk-s3', version: '1.11.851'
+
+    def dependencies = globalConfig.commonDependencies
+    testImplementation dependencies.jUnit
+    testImplementation dependencies.jUnitEngine
+    testImplementation dependencies.assertJ
+    testImplementation dependencies.mockito
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation "org.testcontainers:testcontainers:1.14.3"
+    testImplementation "org.testcontainers:localstack:1.14.3"
+    testImplementation "org.testcontainers:junit-jupiter:1.14.3"
+}
