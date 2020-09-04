@@ -1,3 +1,4 @@
 rootProject.name = 'try-it-out'
 include 'test-containers'
 include 'localstack'
+include 'scala-test'

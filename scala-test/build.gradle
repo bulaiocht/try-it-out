@@ -1,0 +1,25 @@
+plugins {
+    id 'java-library'
+    id 'scala'
+}
+
+group 'com.intellias'
+version '1.0-SNAPSHOT'
+
+def globalConfig = rootProject.ext
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+    def dependencies = globalConfig.commonDependencies
+    testImplementation dependencies.jUnit
+    testImplementation dependencies.jUnitEngine
+    testImplementation dependencies.assertJ
+    testImplementation dependencies.mockito
+}
