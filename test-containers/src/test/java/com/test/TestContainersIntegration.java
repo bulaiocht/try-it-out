@@ -3,8 +3,6 @@ package com.test;
 import com.test.entity.Actor;
 import com.test.repository.ActorRepository;
 import org.assertj.core.api.Assertions;
-import org.junit.ClassRule;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
